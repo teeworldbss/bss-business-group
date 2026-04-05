@@ -22,7 +22,7 @@
 ## 🚀 ENVIRONMENT SETUP (Vercel)
 To connect this repository to the **BSS Cloud**, ensure the following variables are set in your Vercel Dashboard:
 
-1. `GOOGLE_GENERATIVE_AI_API_KEY`: [Your Secret Key]
+1. `GOOGLE_GENERATIVE_AI_API_KEY`: [AIzaSyArwXobFT7hzfYcK_UODKfmg-oexDZYXm4]
 2. `NEXT_PUBLIC_BSS_CLOUD_URL`: https://api.bss-bizgroup.com/v1.0.0
 3. `BSS_DATABASE_NAME`: bss_bizgroup
 
