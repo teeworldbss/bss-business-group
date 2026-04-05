@@ -1,67 +1,47 @@
-# 🛡️ BSS BUSINESS GROUP
-
-A high-fidelity digital marketplace with WhatsApp-style group chat, secure transactions, and role-based dashboards.
-
----
-
-## 👨‍💻 Developer
-**Taiwo Fashola**  
-📞 +234 811 842 8191  
+# 🛡️ BSS BUSINESS GROUP | v1.0.0
+### DEVELOPER: Taiwo Fashola (+234 811 842 8191)
+### OWNER: BSS Market Group (Master Node)
 
 ---
 
-## 🏢 Owner
-BSS Market Group (Master Node)
+## 🌐 PROJECT ENDPOINTS
+| Service | Environment | URL Address |
+| :--- | :--- | :--- |
+| **Frontend** | Vercel (Live) | https://bss-business-group.vercel.app |
+| **Backend** | Gemini Cloud | https://generativelanguage.googleapis.com/v1beta |
+| **Database** | BSD Gemini | bss_bizgroup/prompt/v1.0.0 |
 
 ---
 
-## 🚀 Live App
-Frontend (Vercel): Key: REACT_APP_API_URL
-Value: (https://bss-business-group.vercel.app)
-Backend (Gemini Cloud):(https://generativelanguage.googleapis.com/v1beta)  
+## 🛠️ CORE ARCHITECTURE
+- **Simulation:** High-fidelity marketplace with WhatsApp-style group chat.
+- **Sync Protocol:** POST_TRANSACTION Automated Sync.
+- **Authentication:** STRICT_DB_LOOKUP (User ID/Username validation).
+- **Security:** GOVT_PORTAL_INTEGRATED (NIN/Voters Card auto-verification).
+
+## 🚀 ENVIRONMENT SETUP (Vercel)
+To connect this repository to the **BSS Cloud**, ensure the following variables are set in your Vercel Dashboard:
+
+1. `GOOGLE_GENERATIVE_AI_API_KEY`: [Your Secret Key]
+2. `NEXT_PUBLIC_BSS_CLOUD_URL`: https://api.bss-bizgroup.com/v1.0.0
+3. `BSS_DATABASE_NAME`: bss_bizgroup
 
 ---
 
-## 📌 Features
-
-- 🟢 Buyer & Seller Registration (Step-by-step)
-- 🔐 Role-Based Access System:
-  - 🔴 Admin
-  - 🟡 Moderator
-  - 🟢 Seller
-  - 🔵 Buyer
-  - ⚪ Guest (limited access)
-- 💬 WhatsApp-style Group Chat
-- 📦 Advert Posting & Product Requests
-- 🚚 Transaction Tracking (Pending → Shipped → Delivered)
-- 🧾 Receipt Upload System
-- ⭐ Seller Integrity Score
-- 🔔 Auto Welcome Messages
-- 🔄 Subscription Toggle System (Admin)
-- 🚫 User Block/Unblock (Admin Control)
+## 📊 ACCESS HIERARCHY
+- 🔴 **ADMIN:** Full system control & seller verification.
+- 🟡 **MODERATOR:** Group oversight & transaction monitoring.
+- 🟢 **VERIFIED SELLER:** Posting Adverts & Stock Management.
+- 🔵 **REGISTERED BUYER:** Product requests & Private Messaging.
+- ⚪ **GUEST:** Read-only (Limit: 5 interactions).
 
 ---
 
-## 🧱 Tech Stack
-
-### Frontend
-- React.js
-- Axios
-- React Router
-
-### Backend
-- Gemini Cloud (Custom API)
-- JSON-based Database
-
-### Deployment
-- Vercel (Frontend)
-- Gemini Cloud (Backend)
+## 📂 PROJECT FOLDER STRUCTURE
+- `/prompt`: Contains System Prompt v1.0.0 logic.
+- `/src/api`: Connection logic for Google Gemini v1beta.
+- `/src/components`: Number-driven menu UI elements.
 
 ---
-
-## ⚙️ Installation (Local Setup)
-
-### 1️⃣ Clone Repository
-```bash
-git clone https://github.com/your-username/bss-business-group.git
-cd bss-business-group/frontend
+**System Status:** PROMO MODE ACTIVE (Registration Fees: OFF)
+**Last Updated:** 2026-04-05
