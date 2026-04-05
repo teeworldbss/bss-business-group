@@ -7,7 +7,7 @@
 ## 🌐 PROJECT ENDPOINTS
 | Service | Environment | URL Address |
 | :--- | :--- | :--- |
-| **Frontend** | Vercel (Live) | https://bss-business-group.vercel.app |
+| **Frontend** | Vercel (Live) | bss-business-group.vercel.app |
 | **Backend** | Gemini Cloud | https://generativelanguage.googleapis.com/v1beta |
 | **Database** | BSD Gemini | bss_bizgroup/prompt/v1.0.0 |
 
