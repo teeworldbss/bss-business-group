@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "name": "bss-business-group",
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "BSS_VERSION": "1.0.0",
+    "BSS_DATABASE": "bss_bizgroup",
+    "BSS_BACKEND_URL": "https://generativelanguage.googleapis.com/v1beta"
+  }
+}
