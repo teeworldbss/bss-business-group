@@ -16,8 +16,9 @@ BSS Market Group (Master Node)
 ---
 
 ## 🚀 Live App
-Frontend (Vercel): https://your-vercel-link.vercel.app  
-Backend (Gemini Cloud): https://your-gemini-backend-url.com  
+Frontend (Vercel): Key: REACT_APP_API_URL
+Value: (https://bss-business-group.vercel.app)
+Backend (Gemini Cloud):(https://generativelanguage.googleapis.com/v1beta)  
 
 ---
 
