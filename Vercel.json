@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "bss-business-group-frontend",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
