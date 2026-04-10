@@ -1,39 +1,32 @@
 const functions = require('@google-cloud/functions-framework');
 
-// Your secure token from @BotFather
 const TELEGRAM_TOKEN = '8611189372:AAG0wevn9brDwRO5us9i83HotA0MuoTuRFU'; 
 const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
 
 functions.http('bss-bizgroup-api', async (req, res) => {
-  // 1. Ensure the request is coming from Telegram (POST)
-  if (req.method !== 'POST') {
-    return res.status(405).send('Method Not Allowed');
-  }
+  if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
 
   const message = req.body.message;
-  
-  // Ignore updates that aren't text messages
-  if (!message || !message.text) {
-    return res.status(200).send('OK');
-  }
+  if (!message || !message.text) return res.status(200).send('OK');
 
   const chatId = message.chat.id;
-  const text = message.text.trim();
+  const text = message.text.trim().toLowerCase();
   let replyText = "";
 
-  // 2. Your BSS Business Simulation Logic
-  if (text === "1") {
-    replyText = "🛠️ *BSS REGISTRATION*\n\nWelcome! Please provide your *Full Name* and *Business Category* to begin the onboarding process.";
+  // Logic for /start or any unknown text to show the menu
+  if (text === "/start" || text === "menu" || text === "hi") {
+    replyText = "Welcome to *BSS Business Group*.\n\nSelect an option:\n1️⃣ Register for Student Office\n2️⃣ View Marketplace\n3️⃣ System Status";
+  } else if (text === "1") {
+    replyText = "🛠️ *BSS REGISTRATION*\n\nPlease provide your *Full Name* and *Business Category* to begin.";
   } else if (text === "2") {
-    replyText = "🛒 *LIVE MARKETPLACE*\n\n1. Healthy Broilers (₦4,500)\n2. Layers (₦3,200)\n3. Feed (₦12,000)\n\nReply with an item number to view details.";
+    replyText = "🛒 *LIVE MARKETPLACE*\n\n1. Healthy Broilers (₦4,500)\n2. Layers (₦3,200)\n\nReply with an item number to view details.";
   } else if (text === "3") {
-    replyText = "📊 *SYSTEM DIAGNOSTICS*\n\n*Node ID:* BSS-ROOT-001\n*Cloud Status:* Active\n*Database:* Firebase-Sync-Enabled";
+    replyText = "📊 *SYSTEM DIAGNOSTICS*\n\n*Node ID:* BSS-ROOT-001\n*Status:* Active";
   } else {
-    // Default Main Menu
-    replyText = "Welcome to *BSS Business Group*.\n\nPlease select an option:\n\n1️⃣ Register for Student Office\n2️⃣ View Marketplace\n3️⃣ System Status";
+    // If they type anything else, show the menu again so they aren't stuck
+    replyText = "I didn't quite get that. Here is the menu:\n\n1️⃣ Register\n2️⃣ Market\n3️⃣ Status";
   }
 
-  // 3. Send the reply back to the user's Telegram chat
   try {
     await fetch(TELEGRAM_API, {
       method: 'POST',
@@ -48,6 +41,5 @@ functions.http('bss-bizgroup-api', async (req, res) => {
     console.error('Telegram API Error:', error);
   }
 
-  // Always tell Telegram you received the message
   res.status(200).send('OK');
 });
